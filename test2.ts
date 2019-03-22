@@ -33,6 +33,7 @@ while(myHP > 0 && oppHP > 0) {
   console.log('------------------------------')
   console.log(attackerName + ' uses Shadow Ball')
   console.log('Shadow Ball hits for ' + attackDamage) 
+  if(isMyTurn){
       oppHP = oppHP - attackDamage
       console.log(defenderName + "'s health is reduced to " + oppHP)
         }
