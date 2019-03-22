@@ -8,7 +8,10 @@ function displayOptions(array) {
     i = i + 1
   }
 }
-
+function getPrice(option) {
+    return parseInt(option.split('RM ')[1])
+    }
+    
 console.log('Choose your Resolution')
 const resOptions = [
   '1920 x 1080 : RM 300',
@@ -37,8 +40,22 @@ const hddOptions = ['128GB: RM 100', '256GB: RM 200', '1TB : RM 300']
 displayOptions(hddOptions)
 let ansHDD = question('Select HDD index\n')
 
+const prices = [
+    resOptions[ansRes].price,
+    videoCardOptions[ansVC].price,
+    processorOptions[ansProcessor].price,
+    hddOptions[ansHDD].price,
+    ]
+    let totalPrice = 0
+    for (let i in prices) {
+    totalPrice = totalPrice + prices[parseInt(i)]
+    }
 console.log('You Have Chosen the following options: ')
 console.log(resOptions[ansRes])
 console.log(videoCardOptions[ansVC])
 console.log(processorOptions[ansProcessor])
 console.log(hddOptions[ansHDD])
+console.log(totalPrice)
+
+
+    
